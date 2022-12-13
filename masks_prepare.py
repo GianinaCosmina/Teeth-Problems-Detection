@@ -48,6 +48,7 @@ def pre_splitted_masks(path=default_path):
     masks=convert_one_channel(np.asarray(masks))
     for i in range (1,len(dirs)):
         img=Image.open(path+dirs[i])
+	img=img.resize((resize_shape),Image.ANTIALIAS)
         img=convert_one_channel(np.asarray(img))
         masks=np.concatenate((masks,img))
     masks=np.reshape(masks,(len(dirs),512,512,1))
