@@ -44,8 +44,8 @@ def CCA_Analysis(orig_image,predict_image,erode_iteration,open_iteration):
         box = cv2.boxPoints(rect)
         box = np.array(box, dtype="int")    
         box = perspective.order_points(box)
-        color1 = (list(np.random.choice(range(150), size=3)))  
-        color =[int(color1[0]), int(color1[1]), int(color1[2])]  
+        # color1 = (list(np.random.choice(range(150), size=3)))  
+        color =[247, 5, 5]  
         cv2.drawContours(image2,[box.astype("int")],0,color,2)
         (tl,tr,br,bl)=box
         
@@ -70,13 +70,8 @@ def CCA_Analysis(orig_image,predict_image,erode_iteration,open_iteration):
         pixelsPerMetric=1
         dimA = dA * pixelsPerMetric
         dimB = dB *pixelsPerMetric
-        cv2.putText(image2, "{:.1f}pixel".format(dimA),(int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,0.65, color, 2)
-        cv2.putText(image2, "{:.1f}pixel".format(dimB),(int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,0.65, color, 2)
-        cv2.putText(image2, "{:.1f}".format(label),(int(tltrX - 35), int(tltrY - 5)), cv2.FONT_HERSHEY_SIMPLEX,0.65, color, 2)
+        # cv2.putText(image2, "{:.1f}pixel".format(dimA),(int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,0.65, color, 2)
+        # cv2.putText(image2, "{:.1f}pixel".format(dimB),(int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,0.65, color, 2)
+        # cv2.putText(image2, "{:.1f}".format(label),(int(tltrX - 35), int(tltrY - 5)), cv2.FONT_HERSHEY_SIMPLEX,0.65, color, 2)
     teeth_count=count2
     return image2,teeth_count
-
-
-
-
-
