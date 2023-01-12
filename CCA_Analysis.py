@@ -45,7 +45,7 @@ def CCA_Analysis(orig_image,predict_image,erode_iteration,open_iteration):
         box = np.array(box, dtype="int")    
         box = perspective.order_points(box)
         # color1 = (list(np.random.choice(range(150), size=3)))  
-        color =[247, 5, 5]  
+        color =[255, 0, 0]  
         cv2.drawContours(image2,[box.astype("int")],0,color,2)
         (tl,tr,br,bl)=box
         
